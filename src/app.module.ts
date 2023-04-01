@@ -24,11 +24,11 @@ console.log(__dirname)
           filename: 'access.log', //name of file where will be saved logging result
           level: 'debug',
         }),
-        // new winston.transports.File({
-        //   dirname: path.join(__dirname, './../log/info/'),
-        //   filename: 'info.log',
-        //   level: 'info',
-        // }),
+        new winston.transports.File({
+          dirname: process.cwd(), //path to where save loggin result 
+          filename: 'access.log',
+          level: 'info',
+        }),
       ],
     }),
     TypeOrmModule.forRoot({
